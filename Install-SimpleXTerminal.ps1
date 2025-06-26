@@ -1,7 +1,15 @@
 # Install-SimpleXTerminal.ps1
 
-# Prompt user to confirm OpenSSL installation
-$answer = Read-Host "Have you downloaded and installed OpenSSL 3.x (Win64) to the default folder (C:\Program Files\OpenSSL-Win64)? [y/N]"
+# Prompt user to confirm OpenSSL installation and provide download URLs
+$answer = Read-Host @"
+Have you downloaded and installed OpenSSL 3.x (Win64) to the default folder (C:\Program Files\OpenSSL-Win64)?
+Download OpenSSL: https://slproweb.com/products/Win32OpenSSL.html
+
+Have you downloaded the SimpleX Chat Terminal binary and placed it in your Downloads folder?
+Download SimpleX Chat Terminal: https://simplex.chat/downloads/#terminal-console-app
+
+[y/N]
+"@
 
 if ($answer -ne 'y' -and $answer -ne 'Y') {
     Write-Host "Please download and install OpenSSL 3.x (Win64) from: https://slproweb.com/products/Win32OpenSSL.html"
